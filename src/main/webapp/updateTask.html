@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Task</title>
+</head>
+<body>
+
+    <h2>Update Task</h2>
+
+    <button onclick="updateTask()">Update Task 1</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function updateTask() {
+
+            fetch("tasks/1", {
+
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+
+                body:
+                    "title=Complete DSA"
+                    + "&description=Practice linked list properly"
+                    + "&status=completed"
+
+            })
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById("result").innerText = data;
+
+            })
+            .catch(error => {
+
+                document.getElementById("result").innerText =
+                    "Error: " + error;
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>

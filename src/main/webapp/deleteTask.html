@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Task</title>
+</head>
+<body>
+
+    <h2>Delete Task</h2>
+
+    <button onclick="deleteTask()">Delete Task 1</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function deleteTask() {
+
+            fetch("tasks/1", {
+
+                method: "DELETE"
+
+            })
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById("result").innerText = data;
+
+            })
+            .catch(error => {
+
+                document.getElementById("result").innerText =
+                    "Error: " + error;
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>

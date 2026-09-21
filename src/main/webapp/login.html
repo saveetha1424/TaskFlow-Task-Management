@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow — login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- Product Header -->
+        <header class="login-header">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">T</span>
+                <span>TaskFlow</span>
+            </a>
+
+            <a href="register.html" class="create-link">
+                Create account →
+            </a>
+        </header>
+
+
+        <!-- Login Area -->
+        <section class="login-content">
+
+            <div class="login-intro">
+                <span class="eyebrow">WELCOME BACK</span>
+
+                <h1>
+                    Pick up where<br>
+                    you left off.
+                </h1>
+
+                <p>
+                    Sign in to manage your tasks, track progress,
+                    and keep your work moving.
+                </p>
+            </div>
+
+
+            <!-- Login Card -->
+            <div class="login-card">
+
+                <div class="card-heading">
+                    <span class="card-label">ACCOUNT ACCESS</span>
+                    <h2>Sign in</h2>
+                    <p>Enter your account details to continue.</p>
+                </div>
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+                        <label for="email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+
+                    <button type="submit" class="login-button">
+                        Login
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <div id="message" class="message"></div>
+
+
+                <div class="register-prompt">
+                    <span>Don't have an account?</span>
+                    <a href="register.html">Create one</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Info -->
+        <footer class="login-footer">
+            <span>TaskFlow</span>
+            <span>Simple work. Clear progress.</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

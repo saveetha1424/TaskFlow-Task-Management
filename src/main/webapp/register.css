@@ -1,0 +1,809 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #111827;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.register-page {
+    min-height: 100vh;
+    padding: 28px 6%;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(79, 70, 229, 0.08),
+            transparent 30%
+        ),
+        #f5f7fb;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.register-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    font-size: 18px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #e9efff
+    );
+
+    color: #315bea;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(49, 91, 234, 0.12);
+}
+
+
+.login-link {
+    font-size: 13px;
+    color: #7b8497;
+
+    transition: 0.2s ease;
+}
+
+
+.login-link strong {
+    color: #111827;
+    font-weight: 750;
+    margin-left: 4px;
+}
+
+
+.login-link:hover {
+    color: #315bea;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.register-content {
+    width: min(100%, 1120px);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        430px;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   LEFT INTRO
+========================= */
+
+.register-intro {
+    max-width: 620px;
+}
+
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #4d64d9;
+}
+
+
+.register-intro h1 {
+    font-size: clamp(48px, 5vw, 70px);
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+
+    color: #111827;
+
+    margin-bottom: 26px;
+}
+
+
+.register-intro h1 span {
+    background: linear-gradient(
+        90deg,
+        #2864ed,
+        #7553ee
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.register-intro p {
+    max-width: 570px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #68748a;
+
+    margin-bottom: 34px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    max-width: 580px;
+}
+
+
+.feature-item {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 15px 18px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid #e2e6ee;
+
+    border-radius: 13px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.feature-item:hover {
+    transform: translateX(5px);
+
+    border-color: #d3daf0;
+
+    box-shadow:
+        0 12px 28px rgba(25, 38, 68, 0.07);
+}
+
+
+.feature-number {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #eef1ff;
+
+    color: #4058d7;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.feature-item div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.feature-item strong {
+    font-size: 13px;
+
+    color: #182033;
+
+    font-weight: 750;
+}
+
+
+.feature-item span {
+    font-size: 12px;
+
+    color: #8290a5;
+}
+
+
+/* =========================
+   REGISTER CARD
+========================= */
+
+.register-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 38px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid #e0e4ec;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 60px rgba(30, 42, 70, 0.10),
+        0 5px 15px rgba(30, 42, 70, 0.04);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Premium top line */
+
+.register-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 38px;
+    right: 38px;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #2864ed,
+        #7553ee
+    );
+
+    border-radius:
+        0 0 6px 6px;
+}
+
+
+/* =========================
+   CARD HEADING
+========================= */
+
+.card-heading {
+    margin-bottom: 27px;
+}
+
+
+.card-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    color: #4663d8;
+}
+
+
+.card-heading h2 {
+    font-size: 30px;
+
+    line-height: 1.1;
+
+    letter-spacing: -1.2px;
+
+    color: #121826;
+
+    margin-bottom: 8px;
+}
+
+
+.card-heading p {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #8a94a6;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    color: #252d3d;
+}
+
+
+.input-group input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid #dce1ea;
+
+    border-radius: 10px;
+
+    background: #fafbfd;
+
+    color: #172033;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.input-group input::placeholder {
+    color: #a7afbd;
+}
+
+
+.input-group input:focus {
+    background: #ffffff;
+
+    border-color: #5471e9;
+
+    box-shadow:
+        0 0 0 4px rgba(84, 113, 233, 0.10);
+}
+
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+
+.register-button {
+    width: 100%;
+
+    height: 51px;
+
+    margin-top: 5px;
+
+    padding: 0 17px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        100deg,
+        #2864ed,
+        #5545e8
+    );
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow:
+        0 12px 25px rgba(63, 82, 226, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+.register-button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.04);
+
+    box-shadow:
+        0 16px 30px rgba(63, 82, 226, 0.25);
+}
+
+
+.register-button:active {
+    transform: translateY(0);
+}
+
+
+.button-arrow {
+    font-size: 18px;
+
+    transition: transform 0.2s ease;
+}
+
+
+.register-button:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    min-height: 20px;
+
+    margin-top: 13px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+.success-message {
+    color: #28734d;
+}
+
+
+.error-message {
+    color: #c23838;
+}
+
+
+/* =========================
+   LOGIN PROMPT
+========================= */
+
+.login-prompt {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-top: 21px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0f4;
+
+    font-size: 12px;
+
+    color: #8a94a6;
+}
+
+
+.login-prompt a {
+    color: #182033;
+
+    font-weight: 750;
+
+    border-bottom: 1px solid #9da5b4;
+
+    transition: 0.2s ease;
+}
+
+
+.login-prompt a:hover {
+    color: #4663d8;
+
+    border-color: #4663d8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.register-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #e0e4eb;
+
+    font-size: 11px;
+
+    color: #8b95a6;
+}
+
+
+.register-footer span:first-child {
+    font-weight: 800;
+
+    color: #626c7e;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .register-content {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 65px 0;
+    }
+
+    .register-intro {
+        max-width: 700px;
+    }
+
+    .register-card {
+        max-width: 500px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .register-page {
+        padding: 20px;
+    }
+
+
+    .login-link {
+        font-size: 11px;
+    }
+
+
+    .register-content {
+        padding: 50px 0;
+    }
+
+
+    .register-intro h1 {
+        font-size: 43px;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    .register-intro p {
+        font-size: 14px;
+    }
+
+
+    .feature-item {
+        padding: 13px;
+    }
+
+
+    .register-card {
+        padding: 28px 22px;
+
+        border-radius: 17px;
+    }
+
+
+    .register-card::before {
+        left: 22px;
+        right: 22px;
+    }
+
+
+    .register-footer {
+        font-size: 10px;
+    }
+
+}
+/* =========================
+   DARK THEME
+========================= */
+
+html[data-theme="dark"] body {
+    background: #0b1020;
+    color: #f1f5ff;
+}
+
+html[data-theme="dark"] .register-page {
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(79, 70, 229, 0.18),
+            transparent 30%
+        ),
+        #0b1020;
+}
+
+html[data-theme="dark"] .brand {
+    color: #f5f7ff;
+}
+
+html[data-theme="dark"] .brand-mark {
+    background: linear-gradient(135deg, #18213b, #111a31);
+    color: #8da2ff;
+}
+
+html[data-theme="dark"] .login-link {
+    color: #8994aa;
+}
+
+html[data-theme="dark"] .login-link strong {
+    color: #f5f7ff;
+}
+
+html[data-theme="dark"] .register-intro h1 {
+    color: #f5f7ff;
+}
+
+html[data-theme="dark"] .register-intro p {
+    color: #9ba7bd;
+}
+
+html[data-theme="dark"] .feature-item {
+    background: rgba(18, 26, 45, 0.75);
+    border-color: #26314a;
+}
+
+html[data-theme="dark"] .feature-item:hover {
+    border-color: #3a4a70;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="dark"] .feature-number {
+    background: #182347;
+    color: #91a4ff;
+}
+
+html[data-theme="dark"] .feature-item strong {
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] .feature-item span {
+    color: #8793aa;
+}
+
+html[data-theme="dark"] .register-card {
+    background: rgba(17, 24, 41, 0.96);
+    border-color: #29344d;
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .card-heading h2 {
+    color: #f5f7ff;
+}
+
+html[data-theme="dark"] .card-heading p {
+    color: #8f9bb1;
+}
+
+html[data-theme="dark"] .input-group label {
+    color: #dce3f3;
+}
+
+html[data-theme="dark"] .input-group input {
+    background: #11192c;
+    border-color: #2b3853;
+    color: #f1f5ff;
+}
+
+html[data-theme="dark"] .input-group input::placeholder {
+    color: #69758c;
+}
+
+html[data-theme="dark"] .input-group input:focus {
+    background: #141e34;
+    border-color: #6078e8;
+}
+
+html[data-theme="dark"] .login-prompt {
+    border-color: #29344a;
+    color: #8995aa;
+}
+
+html[data-theme="dark"] .login-prompt a {
+    color: #e8edff;
+    border-color: #59657d;
+}
+
+html[data-theme="dark"] .register-footer {
+    border-color: #29344a;
+    color: #7e8aa1;
+}
+
+html[data-theme="dark"] .register-footer span:first-child {
+    color: #aab5c9;
+}

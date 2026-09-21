@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow - Settings</title>
+
+    <link rel="stylesheet" href="settings.css">
+
+    <script>
+        (function () {
+            var savedTheme =
+                localStorage.getItem("taskflowTheme") || "light";
+
+            if (savedTheme === "dark") {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "dark"
+                );
+            } else if (savedTheme === "system") {
+                var systemDark =
+                    window.matchMedia &&
+                    window.matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    ).matches;
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    systemDark ? "dark" : "light"
+                );
+            } else {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "light"
+                );
+            }
+        })();
+    </script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">T</div>
+            <span>TaskFlow</span>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="mytasks.html">
+                <span>✓</span>
+                My Tasks
+            </a>
+
+            <a href="profile.html">
+                <span>◯</span>
+                Profile
+            </a>
+
+            <a href="settings.html" class="active">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-user">
+
+                <div
+                    class="sidebar-avatar"
+                    id="sidebarAvatar">
+                    U
+                </div>
+
+                <div class="sidebar-user-info">
+
+                    <strong id="sidebarName">
+                        User
+                    </strong>
+
+                    <span id="sidebarEmail">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                class="logout-btn"
+                id="logoutButton">
+
+                <span>↪</span>
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+
+                <p class="page-label">
+                    PREFERENCES
+                </p>
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p class="page-description">
+                    Customize your TaskFlow experience.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- APPEARANCE -->
+        <section class="settings-card">
+
+            <div class="section-title">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        ◐
+                    </div>
+
+                    <div>
+                        <h2>
+                            Appearance
+                        </h2>
+
+                        <p>
+                            Choose how TaskFlow looks on your device.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="theme-options">
+
+                <!-- LIGHT -->
+                <label class="theme-option">
+
+                    <input
+                        type="radio"
+                        name="theme"
+                        value="light">
+
+                    <div class="theme-box">
+
+                        <div class="theme-icon light-icon">
+                            ☀
+                        </div>
+
+                        <div class="theme-text">
+
+                            <strong>
+                                Light
+                            </strong>
+
+                            <small>
+                                Use the light theme
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+
+                <!-- DARK -->
+                <label class="theme-option">
+
+                    <input
+                        type="radio"
+                        name="theme"
+                        value="dark">
+
+                    <div class="theme-box">
+
+                        <div class="theme-icon dark-icon">
+                            ◐
+                        </div>
+
+                        <div class="theme-text">
+
+                            <strong>
+                                Dark
+                            </strong>
+
+                            <small>
+                                Use the dark theme
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+
+                <!-- SYSTEM -->
+                <label class="theme-option">
+
+                    <input
+                        type="radio"
+                        name="theme"
+                        value="system">
+
+                    <div class="theme-box">
+
+                        <div class="theme-icon system-icon">
+                            ▣
+                        </div>
+
+                        <div class="theme-text">
+
+                            <strong>
+                                System
+                            </strong>
+
+                            <small>
+                                Follow your device setting
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- PREFERENCES -->
+        <section class="settings-card">
+
+            <div class="section-title">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        ⚙
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Preferences
+                        </h2>
+
+                        <p>
+                            Manage your task management preferences.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="preference-list">
+
+                <!-- NOTIFICATIONS -->
+                <div class="preference-row">
+
+                    <div class="preference-info">
+
+                        <strong>
+                            Task completion notifications
+                        </strong>
+
+                        <span>
+                            Show a notification when a task is completed.
+                        </span>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="notifications">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- DELETE CONFIRMATION -->
+                <div class="preference-row">
+
+                    <div class="preference-info">
+
+                        <strong>
+                            Delete confirmation
+                        </strong>
+
+                        <span>
+                            Ask for confirmation before deleting a task.
+                        </span>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="deleteConfirmation">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="settings-card">
+
+            <div class="section-title">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        i
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            About TaskFlow
+                        </h2>
+
+                        <p>
+                            Information about this application.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-list">
+
+                <div class="about-row">
+                    <span>Application</span>
+                    <strong>TaskFlow</strong>
+                </div>
+
+                <div class="about-row">
+                    <span>Version</span>
+                    <strong>1.0.0</strong>
+                </div>
+
+                <div class="about-row">
+                    <span>Application Type</span>
+                    <strong>Task Management System</strong>
+                </div>
+
+                <div class="about-row">
+                    <span>Backend</span>
+                    <strong>Java Servlets</strong>
+                </div>
+
+                <div class="about-row">
+                    <span>Database</span>
+                    <strong>MySQL</strong>
+                </div>
+
+            </div>
+
+
+            <div class="about-footer">
+
+                <span class="footer-dot"></span>
+
+                TaskFlow helps you organize, manage and track
+                your daily tasks efficiently.
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+    /* =========================
+       PROFILE
+    ========================= */
+
+    function loadProfile() {
+
+        fetch("profile")
+
+            .then(function (response) {
+                return response.text();
+            })
+
+            .then(function (data) {
+
+                var lines = data.split("\n");
+
+                var name = "User";
+                var email = "Loading...";
+
+                lines.forEach(function (line) {
+
+                    line = line.trim();
+
+                    if (line.indexOf("Name:") === 0) {
+                        name = line.substring(5).trim();
+                    }
+
+                    if (line.indexOf("Email:") === 0) {
+                        email = line.substring(6).trim();
+                    }
+
+                });
+
+                document.getElementById(
+                    "sidebarName"
+                ).textContent = name;
+
+                document.getElementById(
+                    "sidebarEmail"
+                ).textContent = email;
+
+                document.getElementById(
+                    "sidebarAvatar"
+                ).textContent =
+                    name.charAt(0).toUpperCase();
+
+            })
+
+            .catch(function () {
+
+                document.getElementById(
+                    "sidebarName"
+                ).textContent = "User";
+
+                document.getElementById(
+                    "sidebarEmail"
+                ).textContent = "Unable to load";
+
+            });
+    }
+
+
+    /* =========================
+       THEME
+    ========================= */
+
+    function applyTheme(theme) {
+
+        if (theme === "system") {
+
+            var systemDark =
+                window.matchMedia &&
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                systemDark ? "dark" : "light"
+            );
+
+        } else {
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                theme
+            );
+        }
+
+        localStorage.setItem(
+            "taskflowTheme",
+            theme
+        );
+    }
+
+
+    function loadTheme() {
+
+        var savedTheme =
+            localStorage.getItem(
+                "taskflowTheme"
+            ) || "light";
+
+        var radio =
+            document.querySelector(
+                'input[name="theme"][value="' +
+                savedTheme +
+                '"]'
+            );
+
+        if (radio) {
+            radio.checked = true;
+        }
+
+        applyTheme(savedTheme);
+    }
+
+
+    document
+        .querySelectorAll('input[name="theme"]')
+        .forEach(function (radio) {
+
+            radio.addEventListener(
+                "change",
+                function () {
+
+                    applyTheme(
+                        this.value
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       PREFERENCES
+    ========================= */
+
+    var notifications =
+        document.getElementById(
+            "notifications"
+        );
+
+    var deleteConfirmation =
+        document.getElementById(
+            "deleteConfirmation"
+        );
+
+
+    function loadPreferences() {
+
+        notifications.checked =
+            localStorage.getItem(
+                "taskflowNotifications"
+            ) !== "false";
+
+        deleteConfirmation.checked =
+            localStorage.getItem(
+                "taskflowDeleteConfirmation"
+            ) !== "false";
+    }
+
+
+    notifications.addEventListener(
+        "change",
+        function () {
+
+            localStorage.setItem(
+                "taskflowNotifications",
+                this.checked
+            );
+
+        }
+    );
+
+
+    deleteConfirmation.addEventListener(
+        "change",
+        function () {
+
+            localStorage.setItem(
+                "taskflowDeleteConfirmation",
+                this.checked
+            );
+
+        }
+    );
+
+
+    /* =========================
+       LOGOUT
+    ========================= */
+
+    document
+        .getElementById("logoutButton")
+        .addEventListener(
+            "click",
+            function () {
+
+                fetch("logout")
+                    .then(function () {
+
+                        window.location.href =
+                            "login.html";
+
+                    })
+                    .catch(function () {
+
+                        window.location.href =
+                            "login.html";
+
+                    });
+
+            }
+        );
+
+
+    /* =========================
+       INITIAL LOAD
+    ========================= */
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            loadProfile();
+            loadTheme();
+            loadPreferences();
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1395 @@
+/* =========================================================
+   TASKFLOW — MY TASKS
+   DASHBOARD MATCHED DESIGN
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f7fb;
+    --sidebar: #0b1220;
+
+    --white: #ffffff;
+    --text: #111827;
+    --muted: #718096;
+    --muted-light: #94a3b8;
+
+    --blue: #3478f6;
+    --blue-dark: #172033;
+
+    --border: #e5e9f0;
+
+    --purple: #6d4aff;
+    --purple-soft: #efecff;
+
+    --green: #16b981;
+    --green-soft: #e4f8f1;
+
+    --orange: #e6a52c;
+    --orange-soft: #fff5df;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 88% 0%,
+            rgba(86, 104, 255, 0.10),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 275px;
+    height: 100vh;
+
+    padding: 34px 16px 24px;
+
+    background: #0b1220;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 10px;
+
+    margin-bottom: 58px;
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 22px rgba(37, 99, 235, 0.15);
+}
+
+.brand > span {
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 750;
+
+    letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.navigation a {
+    height: 52px;
+
+    padding: 0 20px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    color: #8993a8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navigation a > span {
+    width: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: inherit;
+
+    font-size: 17px;
+}
+
+.navigation a:hover {
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+}
+
+.navigation a.active {
+    background: #3478f6;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 25px rgba(52, 120, 246, 0.25);
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+
+/* USER CARD */
+
+.sidebar-user {
+    min-height: 72px;
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    border-radius: 15px;
+
+    background: #121b2b;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.sidebar-avatar {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.sidebar-user > div:last-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.sidebar-user strong {
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-user span {
+    color: #7f8aa0;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* LOGOUT */
+
+.logout-btn {
+    width: 100%;
+    height: 44px;
+
+    border-radius: 12px;
+
+    background: #121b2b;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    color: #9aa4b7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #182338;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.main-content {
+    margin-left: 275px;
+
+    min-height: 100vh;
+
+    padding: 0 54px 70px;
+}
+
+
+/* =========================================================
+   TOPBAR / PAGE HEADER
+   ========================================================= */
+
+.topbar {
+    min-height: 190px;
+
+    padding-top: 48px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.page-label {
+    margin-bottom: 8px;
+
+    color: #3478f6;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.topbar h1 {
+    color: #111827;
+
+    font-size: 48px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+}
+
+.page-description {
+    margin-top: 10px;
+
+    color: #718096;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ADD TASK
+   ========================================================= */
+
+.add-task-btn {
+    height: 50px;
+
+    min-width: 155px;
+
+    padding: 0 24px;
+
+    margin-bottom: 5px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: #172033;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 25px rgba(23, 32, 51, 0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.add-task-btn:hover {
+    background: #0f1728;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(23, 32, 51, 0.24);
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-top: 28px;
+
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    position: relative;
+
+    min-height: 162px;
+
+    padding: 27px 28px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 14px 35px rgba(15, 23, 42, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.09);
+}
+
+.stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -45px;
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(109, 74, 255, 0.10),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.stat-card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-card-top > span {
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 650;
+}
+
+.stat-card > strong {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #111827;
+
+    font-size: 36px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.stat-card > p {
+    margin-top: 9px;
+
+    color: #8290a5;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   STAT ICONS
+   ========================================================= */
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    position: relative;
+    z-index: 2;
+}
+
+.stat-icon.total {
+    background: #efecff;
+
+    color: #6d4aff;
+}
+
+.stat-icon.pending {
+    background: #fff5df;
+
+    color: #e6a52c;
+}
+
+.stat-icon.completed {
+    background: #e4f8f1;
+
+    color: #16b981;
+}
+
+
+/* =========================================================
+   TASK SECTION
+   ========================================================= */
+
+.task-section {
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 14px 35px rgba(15, 23, 42, 0.07);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TASK SECTION HEADER
+   ========================================================= */
+
+.task-section-header {
+    min-height: 98px;
+
+    padding: 24px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.task-section-header h2 {
+    color: #111827;
+
+    font-size: 20px;
+
+    line-height: 1.2;
+
+    font-weight: 750;
+
+    margin-bottom: 6px;
+}
+
+.task-section-header p {
+    color: #8290a5;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FILTER AREA
+   ========================================================= */
+
+.filter-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 4px;
+
+    background: #f1f4f8;
+
+    border: 1px solid #e3e8ef;
+
+    border-radius: 12px;
+}
+
+.filter-btn {
+    height: 34px;
+
+    min-width: 70px;
+
+    padding: 0 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: #111827;
+
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.filter-btn.active {
+    background: #ffffff;
+
+    color: #2563eb;
+
+    box-shadow:
+        0 3px 10px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   TASK LIST
+   ========================================================= */
+
+.task-list {
+    padding: 8px 28px 20px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL TASK
+   ========================================================= */
+
+.task-item {
+    min-height: 84px;
+
+    padding: 18px 4px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    border-bottom: 1px solid #edf0f5;
+
+    transition:
+        background 0.2s ease,
+        padding 0.2s ease;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item:hover {
+    background: #fafbfe;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* =========================================================
+   CHECK
+   ========================================================= */
+
+.task-check {
+    width: 29px;
+    height: 29px;
+
+    min-width: 29px;
+
+    border-radius: 50%;
+
+    border: 1.5px solid #cbd5e1;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #718096;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.task-check:hover {
+    border-color: #3478f6;
+
+    transform: scale(1.05);
+}
+
+.task-check.completed {
+    background: #6d4aff;
+
+    border-color: #6d4aff;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TASK CONTENT
+   ========================================================= */
+
+.task-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.task-content h3 {
+    color: #172033;
+
+    font-size: 15px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.task-content p {
+    color: #8a97aa;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   TASK STATUS
+   ========================================================= */
+
+.task-status {
+    min-width: 76px;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.task-status.completed {
+    background: #e4f8f1;
+
+    color: #0fa875;
+}
+
+.task-status.pending {
+    background: #fff4dc;
+
+    color: #df9b20;
+}
+
+
+/* =========================================================
+   TASK ACTIONS
+   ========================================================= */
+
+.task-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.task-action-btn {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e1e6ed;
+
+    background: #ffffff;
+
+    color: #718096;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.task-action-btn:hover {
+    background: #f4f7fb;
+
+    border-color: #cbd5e1;
+
+    color: #2563eb;
+
+    transform: translateY(-1px);
+}
+
+.task-action-btn.delete:hover {
+    background: #fff5f5;
+
+    border-color: #fecaca;
+
+    color: #ef5350;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-state {
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #8290a5;
+
+    font-size: 13px;
+}
+
+.loading-spinner {
+    width: 28px;
+    height: 28px;
+
+    border: 3px solid #e4e9f0;
+
+    border-top-color: #3478f6;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* EMPTY */
+
+.empty-state {
+    min-height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #8290a5;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.task-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.52);
+
+    backdrop-filter: blur(7px);
+
+    z-index: 500;
+}
+
+.task-modal.show {
+    display: flex;
+}
+
+.task-modal-box {
+    width: 100%;
+
+    max-width: 510px;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.22);
+
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.modal-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #3478f6;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+.modal-header h2 {
+    color: #111827;
+
+    font-size: 22px;
+
+    font-weight: 750;
+}
+
+.close-modal {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #e1e6ed;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background: #f5f7fa;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.task-modal-box label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+.task-modal-box input,
+.task-modal-box textarea,
+.task-modal-box select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    margin-bottom: 17px;
+
+    border: 1px solid #dfe4ec;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.task-modal-box textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+.task-modal-box input:focus,
+.task-modal-box textarea:focus,
+.task-modal-box select:focus {
+    border-color: #3478f6;
+
+    box-shadow:
+        0 0 0 3px rgba(52, 120, 246, 0.10);
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.task-message {
+    min-height: 18px;
+
+    margin-bottom: 5px;
+
+    color: #ef5350;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.modal-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.cancel-btn,
+.save-task-btn {
+    height: 42px;
+
+    padding: 0 19px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #f3f5f8;
+
+    border: 1px solid #e1e6ed;
+
+    color: #64748b;
+}
+
+.save-task-btn {
+    background: #172033;
+
+    border: none;
+
+    color: #ffffff;
+}
+
+.save-task-btn:hover {
+    background: #0f1728;
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+html[data-theme="dark"] body {
+    background: #080d17;
+
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .task-section,
+html[data-theme="dark"] .task-modal-box {
+    background: #111827;
+
+    border-color: #1f2937;
+}
+
+html[data-theme="dark"] .topbar h1,
+html[data-theme="dark"] .stat-card > strong,
+html[data-theme="dark"] .task-section-header h2,
+html[data-theme="dark"] .task-content h3,
+html[data-theme="dark"] .modal-header h2 {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .task-section-header,
+html[data-theme="dark"] .task-item {
+    border-color: #1f2937;
+}
+
+html[data-theme="dark"] .filter-area {
+    background: #182233;
+
+    border-color: #263246;
+}
+
+html[data-theme="dark"] .filter-btn.active {
+    background: #243047;
+
+    color: #7fb0ff;
+}
+
+html[data-theme="dark"] .task-action-btn,
+html[data-theme="dark"] .close-modal {
+    background: #111827;
+
+    border-color: #2a374b;
+}
+
+html[data-theme="dark"] .task-modal-box input,
+html[data-theme="dark"] .task-modal-box textarea,
+html[data-theme="dark"] .task-modal-box select {
+    background: #0b1220;
+
+    border-color: #2a374b;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .main-content {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 230px;
+    }
+
+    .main-content {
+        margin-left: 230px;
+
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 42px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 76px;
+
+        padding: 25px 10px;
+    }
+
+    .main-content {
+        margin-left: 76px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .brand {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .brand > span {
+        display: none;
+    }
+
+    .navigation a {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .sidebar-user > div:last-child {
+        display: none;
+    }
+
+    .sidebar-user {
+        justify-content: center;
+
+        padding: 8px;
+    }
+
+    .topbar {
+        min-height: 170px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: flex-end;
+    }
+
+    .add-task-btn {
+        width: 100%;
+    }
+
+    .task-section-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .filter-area {
+        width: 100%;
+    }
+
+    .filter-btn {
+        flex: 1;
+    }
+
+    .task-item {
+        flex-wrap: wrap;
+    }
+
+    .task-actions {
+        margin-left: 45px;
+    }
+}

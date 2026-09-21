@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow — Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+
+    <!-- APPLY SAVED THEME BEFORE PAGE LOAD -->
+    <script>
+        (function () {
+
+            var theme = localStorage.getItem("taskflowTheme");
+
+            if (theme === "dark") {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "dark"
+                );
+
+            } else if (theme === "light") {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "light"
+                );
+
+            } else {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "light"
+                );
+            }
+
+        })();
+    </script>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                T
+            </div>
+
+            <span>
+                TaskFlow
+            </span>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="dashboard.html">
+
+                <span>⌂</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="mytasks.html">
+
+                <span>✓</span>
+
+                My Tasks
+
+            </a>
+
+
+            <a href="profile.html" class="active">
+
+                <span>◯</span>
+
+                Profile
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <span>⚙</span>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-user">
+
+                <div
+                    class="sidebar-avatar"
+                    id="sidebarAvatar">
+
+                    U
+
+                </div>
+
+
+                <div>
+
+                    <strong id="sidebarName">
+                        User
+                    </strong>
+
+                    <span id="sidebarEmail">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                id="logoutButton">
+
+                <span>↪</span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="page-label">
+                    ACCOUNT
+                </p>
+
+                <h1>
+                    Profile
+                </h1>
+
+                <p class="page-description">
+                    Manage your account information and view your details.
+                </p>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="back-btn">
+
+                ← Back to Dashboard
+
+            </a>
+
+        </header>
+
+
+        <!-- PROFILE SUMMARY -->
+
+        <section class="profile-summary">
+
+            <div
+                class="large-avatar"
+                id="profileAvatar">
+
+                U
+
+            </div>
+
+
+            <div class="summary-content">
+
+                <span class="account-badge">
+                    TaskFlow User
+                </span>
+
+
+                <h2 id="profileName">
+                    Loading...
+                </h2>
+
+
+                <p id="profileEmail">
+                    Loading...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+
+        <section class="content-grid">
+
+
+            <!-- ACCOUNT DETAILS -->
+
+            <div class="details-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="heading-icon">
+                            ●
+                        </span>
+
+                        <h3>
+                            Account Details
+                        </h3>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="edit-profile-btn"
+                        id="editProfileButton">
+
+                        Edit
+
+                    </button>
+
+                </div>
+
+
+                <!-- NAME -->
+
+                <div class="detail-row">
+
+                    <div class="detail-icon">
+                        ♙
+                    </div>
+
+
+                    <div class="detail-text">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="profileNameInfo">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="detail-row">
+
+                    <div class="detail-icon">
+                        @
+                    </div>
+
+
+                    <div class="detail-text">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="profileEmailInfo">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT TYPE -->
+
+                <div class="detail-row">
+
+                    <div class="detail-icon">
+                        ✓
+                    </div>
+
+
+                    <div class="detail-text">
+
+                        <span>
+                            Account Type
+                        </span>
+
+                        <strong>
+                            TaskFlow User
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK STATS -->
+
+            <div class="stats-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="heading-icon">
+                            ▥
+                        </span>
+
+                        <h3>
+                            Quick Stats
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL -->
+
+                <div class="stat-row">
+
+                    <div class="stat-icon total">
+                        ✓
+                    </div>
+
+                    <span>
+                        Total Tasks
+                    </span>
+
+                    <strong id="profileTotalTasks">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- PENDING -->
+
+                <div class="stat-row">
+
+                    <div class="stat-icon pending">
+                        ◷
+                    </div>
+
+                    <span>
+                        Pending Tasks
+                    </span>
+
+                    <strong id="profilePendingTasks">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- COMPLETED -->
+
+                <div class="stat-row">
+
+                    <div class="stat-icon completed">
+                        ✓
+                    </div>
+
+                    <span>
+                        Completed Tasks
+                    </span>
+
+                    <strong id="profileCompletedTasks">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACCOUNT NOTE -->
+
+        <div class="account-note">
+
+            <div class="note-icon">
+                i
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Your TaskFlow account
+                </strong>
+
+
+                <p>
+                    Your profile information is connected to your TaskFlow account.
+                    Keep your account details secure.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- EDIT PROFILE MODAL -->
+
+    <div
+        class="profile-modal"
+        id="profileModal">
+
+
+        <div class="profile-modal-box">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-label">
+                        ACCOUNT
+                    </span>
+
+                    <h2>
+                        Edit Profile
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-modal"
+                    id="closeProfileModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <!-- EDIT FORM -->
+
+            <form id="profileEditForm">
+
+
+                <!-- NAME -->
+
+                <label for="editName">
+                    Full Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="editName"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required>
+
+
+                <!-- EMAIL -->
+
+                <label for="editEmail">
+                    Email Address
+                </label>
+
+
+                <input
+                    type="email"
+                    id="editEmail"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="profileEditMessage"
+                    class="profile-edit-message">
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelProfileEdit">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-profile-btn">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE JAVASCRIPT -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                loadProfile();
+
+                loadProfileTasks();
+
+
+                /* =========================
+                   LOGOUT
+                ========================== */
+
+                var logoutButton =
+                    document.getElementById(
+                        "logoutButton"
+                    );
+
+
+                if (logoutButton) {
+
+                    logoutButton.addEventListener(
+                        "click",
+                        function () {
+
+                            fetch("logout", {
+                                method: "GET"
+                            })
+
+                            .then(function () {
+
+                                window.location.href =
+                                    "login.html";
+
+                            })
+
+                            .catch(function () {
+
+                                window.location.href =
+                                    "login.html";
+
+                            });
+
+                        }
+                    );
+
+                }
+
+
+                /* =========================
+                   EDIT PROFILE ELEMENTS
+                ========================== */
+
+                var editProfileButton =
+                    document.getElementById(
+                        "editProfileButton"
+                    );
+
+
+                var profileModal =
+                    document.getElementById(
+                        "profileModal"
+                    );
+
+
+                var closeProfileModal =
+                    document.getElementById(
+                        "closeProfileModal"
+                    );
+
+
+                var cancelProfileEdit =
+                    document.getElementById(
+                        "cancelProfileEdit"
+                    );
+
+
+                var profileEditForm =
+                    document.getElementById(
+                        "profileEditForm"
+                    );
+
+
+                /* =========================
+                   OPEN MODAL
+                ========================== */
+
+                if (editProfileButton) {
+
+                    editProfileButton.addEventListener(
+                        "click",
+                        function () {
+
+
+                            var currentName =
+                                document.getElementById(
+                                    "profileNameInfo"
+                                ).textContent.trim();
+
+
+                            var currentEmail =
+                                document.getElementById(
+                                    "profileEmailInfo"
+                                ).textContent.trim();
+
+
+                            document.getElementById(
+                                "editName"
+                            ).value = currentName;
+
+
+                            document.getElementById(
+                                "editEmail"
+                            ).value = currentEmail;
+
+
+                            document.getElementById(
+                                "profileEditMessage"
+                            ).textContent = "";
+
+
+                            document.getElementById(
+                                "profileEditMessage"
+                            ).className =
+                                "profile-edit-message";
+
+
+                            profileModal.classList.add(
+                                "show"
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                /* =========================
+                   CLOSE MODAL
+                ========================== */
+
+                function closeProfileModalWindow() {
+
+                    profileModal.classList.remove(
+                        "show"
+                    );
+
+                }
+
+
+                if (closeProfileModal) {
+
+                    closeProfileModal.addEventListener(
+                        "click",
+                        closeProfileModalWindow
+                    );
+
+                }
+
+
+                if (cancelProfileEdit) {
+
+                    cancelProfileEdit.addEventListener(
+                        "click",
+                        closeProfileModalWindow
+                    );
+
+                }
+
+
+                /* =========================
+                   CLICK OUTSIDE MODAL
+                ========================== */
+
+                if (profileModal) {
+
+                    profileModal.addEventListener(
+                        "click",
+                        function (event) {
+
+                            if (
+                                event.target ===
+                                profileModal
+                            ) {
+
+                                closeProfileModalWindow();
+
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                /* =========================
+                   SAVE PROFILE
+                ========================== */
+
+                if (profileEditForm) {
+
+                    profileEditForm.addEventListener(
+                        "submit",
+                        function (event) {
+
+                            event.preventDefault();
+
+
+                            var name =
+                                document.getElementById(
+                                    "editName"
+                                ).value.trim();
+
+
+                            var email =
+                                document.getElementById(
+                                    "editEmail"
+                                ).value.trim();
+
+
+                            var message =
+                                document.getElementById(
+                                    "profileEditMessage"
+                                );
+
+
+                            var saveButton =
+                                profileEditForm.querySelector(
+                                    ".save-profile-btn"
+                                );
+
+
+                            /* VALIDATION */
+
+                            if (!name || !email) {
+
+                                message.textContent =
+                                    "Please fill in all fields.";
+
+                                message.className =
+                                    "profile-edit-message error";
+
+                                return;
+
+                            }
+
+
+                            /* SHOW SAVING */
+
+                            message.textContent =
+                                "Saving profile...";
+
+                            message.className =
+                                "profile-edit-message";
+
+
+                            saveButton.disabled = true;
+
+                            saveButton.textContent =
+                                "Saving...";
+
+
+                            /* SEND TO BACKEND */
+
+                            var formData =
+                                new URLSearchParams();
+
+
+                            formData.append(
+                                "name",
+                                name
+                            );
+
+
+                            formData.append(
+                                "email",
+                                email
+                            );
+
+
+                            fetch(
+                                "update-profile",
+                                {
+                                    method: "POST",
+
+                                    headers: {
+                                        "Content-Type":
+                                            "application/x-www-form-urlencoded"
+                                    },
+
+                                    body:
+                                        formData.toString()
+                                }
+                            )
+
+
+                            .then(function (response) {
+
+                                return response.text();
+
+                            })
+
+
+                            .then(function (data) {
+
+                                data = data.trim();
+
+
+                                if (
+                                    data ===
+                                    "Profile updated successfully!"
+                                ) {
+
+
+                                    message.textContent =
+                                        "Profile updated successfully!";
+
+
+                                    message.className =
+                                        "profile-edit-message success";
+
+
+                                    loadProfile();
+
+
+                                    setTimeout(
+                                        function () {
+
+                                            closeProfileModalWindow();
+
+                                        },
+                                        700
+                                    );
+
+
+                                } else {
+
+
+                                    message.textContent =
+                                        data;
+
+
+                                    message.className =
+                                        "profile-edit-message error";
+
+                                }
+
+                            })
+
+
+                            .catch(function (error) {
+
+                                console.error(error);
+
+
+                                message.textContent =
+                                    "Unable to update profile.";
+
+
+                                message.className =
+                                    "profile-edit-message error";
+
+                            })
+
+
+                            .finally(function () {
+
+                                saveButton.disabled =
+                                    false;
+
+                                saveButton.textContent =
+                                    "Save Changes";
+
+                            });
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           LOAD PROFILE
+        ========================== */
+
+        function loadProfile() {
+
+            fetch("profile")
+
+                .then(function (response) {
+
+                    return response.text();
+
+                })
+
+
+                .then(function (data) {
+
+                    var lines =
+                        data.split("\n");
+
+
+                    var name = "";
+
+                    var email = "";
+
+
+                    lines.forEach(
+                        function (line) {
+
+                            line = line.trim();
+
+
+                            if (
+                                line.indexOf("Name:") === 0
+                            ) {
+
+                                name =
+                                    line.substring(5)
+                                        .trim();
+
+                            }
+
+
+                            if (
+                                line.indexOf("Email:") === 0
+                            ) {
+
+                                email =
+                                    line.substring(6)
+                                        .trim();
+
+                            }
+
+                        }
+                    );
+
+
+                    if (!name) {
+
+                        name = "User";
+
+                    }
+
+
+                    if (!email) {
+
+                        email = "Not available";
+
+                    }
+
+
+                    /* PROFILE */
+
+                    document.getElementById(
+                        "profileName"
+                    ).textContent = name;
+
+
+                    document.getElementById(
+                        "profileEmail"
+                    ).textContent = email;
+
+
+                    /* ACCOUNT DETAILS */
+
+                    document.getElementById(
+                        "profileNameInfo"
+                    ).textContent = name;
+
+
+                    document.getElementById(
+                        "profileEmailInfo"
+                    ).textContent = email;
+
+
+                    /* SIDEBAR */
+
+                    document.getElementById(
+                        "sidebarName"
+                    ).textContent = name;
+
+
+                    document.getElementById(
+                        "sidebarEmail"
+                    ).textContent = email;
+
+
+                    /* AVATAR */
+
+                    var firstLetter =
+                        name.charAt(0)
+                            .toUpperCase();
+
+
+                    document.getElementById(
+                        "profileAvatar"
+                    ).textContent =
+                        firstLetter;
+
+
+                    document.getElementById(
+                        "sidebarAvatar"
+                    ).textContent =
+                        firstLetter;
+
+                })
+
+
+                .catch(function () {
+
+                    document.getElementById(
+                        "profileName"
+                    ).textContent = "User";
+
+
+                    document.getElementById(
+                        "profileEmail"
+                    ).textContent =
+                        "Unable to load";
+
+                });
+
+        }
+
+
+        /* =========================
+           LOAD TASK STATS
+        ========================== */
+
+        function loadProfileTasks() {
+
+            fetch("tasks")
+
+                .then(function (response) {
+
+                    return response.text();
+
+                })
+
+
+                .then(function (data) {
+
+                    var total = 0;
+
+                    var pending = 0;
+
+                    var completed = 0;
+
+
+                    if (data.trim() !== "") {
+
+
+                        var lines =
+                            data
+                                .split("\n")
+                                .filter(
+                                    function (line) {
+
+                                        return (
+                                            line.trim() !== ""
+                                        );
+
+                                    }
+                                );
+
+
+                        total = lines.length;
+
+
+                        lines.forEach(
+                            function (line) {
+
+                                var lower =
+                                    line.toLowerCase();
+
+
+                                if (
+                                    lower.indexOf(
+                                        "completed"
+                                    ) !== -1
+                                ) {
+
+                                    completed++;
+
+                                }
+
+
+                                if (
+                                    lower.indexOf(
+                                        "pending"
+                                    ) !== -1
+                                ) {
+
+                                    pending++;
+
+                                }
+
+                            }
+                        );
+
+                    }
+
+
+                    document.getElementById(
+                        "profileTotalTasks"
+                    ).textContent =
+                        total;
+
+
+                    document.getElementById(
+                        "profilePendingTasks"
+                    ).textContent =
+                        pending;
+
+
+                    document.getElementById(
+                        "profileCompletedTasks"
+                    ).textContent =
+                        completed;
+
+                })
+
+
+                .catch(function () {
+
+                    document.getElementById(
+                        "profileTotalTasks"
+                    ).textContent = "0";
+
+
+                    document.getElementById(
+                        "profilePendingTasks"
+                    ).textContent = "0";
+
+
+                    document.getElementById(
+                        "profileCompletedTasks"
+                    ).textContent = "0";
+
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
