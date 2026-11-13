@@ -1,18 +1,31 @@
 
-# TaskFlow – Task Management Application
+# TaskFlow – Task Management Web Application
 
 ## Overview
-TaskFlow is a task management application developed as part of my Thiranex internship.
+TaskFlow is a web-based task management application developed as part of my Thiranex internship.
 
 ## Features
-- Create new tasks
-- View existing tasks
-- Update task details
-- Delete tasks
-- Manage task status
+- User registration and login
+- User profile management
+- Create and view tasks
+- Update and delete tasks
+- Task status management
+- Logout functionality
 
-## Project Purpose
-The application helps users organize and manage their tasks efficiently.
+## Technologies Used
+- Java
+- Java Servlets
+- JDBC
+- MySQL
+- HTML
+- CSS
+- JavaScript
+- Apache Tomcat
+
+## Project Structure
+- `src/main/java` – Java backend servlets and database connectivity
+- `src/main/webapp` – Frontend HTML, CSS and JavaScript files
+- `WEB-INF/lib` – MySQL Connector/J library
 
 ## Internship
 Developed as part of the Thiranex Internship.
